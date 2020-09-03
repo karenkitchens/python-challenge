@@ -1,10 +1,8 @@
 import os
 import csv
 
-OUT_PATH = "vote_data.csv"
-OUT_HEADER = [
-
-]
+TEXT_FILE = "vote_results.txt"
+# write a text file
 
 path = os.path.join("Resources", "election_data.csv")
 
@@ -48,10 +46,15 @@ with open(path, "r") as file:
             otooley_votes += 1
     
     khan_perc = float(khan_votes) / float(count) * 100
+    khan_perc = round(khan_perc, 2)
     correy_perc = float(correy_votes) / float(count) * 100
+    correy_perc = round(correy_perc, 2)
     li_perc = float(li_votes) / float(count) * 100
+    li_perc = round(li_perc, 2)
     otooley_perc = float(otooley_votes) / float(count) * 100
+    otooley_perc = round(otooley_perc, 2)
 
+    print '-' * 20
     print(khan_votes)
     print(khan_perc)
     print(correy_votes)
@@ -60,5 +63,11 @@ with open(path, "r") as file:
     print(li_perc)
     print(otooley_votes)
     print(otooley_perc)
-            
 
+
+    with open(TEXT_FILE, "w+") as file:
+        file.write('Khan = ' + repr(khan_perc) + '% (' + repr(khan_votes) + ') \n')
+        file.write('Correy = ' + repr(correy_perc) + '% (' + repr(correy_votes) + ') \n')
+        file.write('Li = ' + repr(li_perc) + '% (' + repr(li_votes) + ') \n')
+        file.write('Otooley = ' + repr(otooley_perc) + '% (' + repr(otooley_votes) + ') \n')
+        file.write("Goodboy\n")
