@@ -54,19 +54,21 @@ with open(path, "r") as file:
     otooley_perc = float(otooley_votes) / float(count) * 100
     otooley_perc = round(otooley_perc, 2)
 
-    print '-' * 20
-    print(khan_votes)
-    print(khan_perc)
-    print(correy_votes)
-    print(correy_perc)
-    print(li_votes)
-    print(li_perc)
-    print(otooley_votes)
-    print(otooley_perc)
+
+    print('\n' + 'Election Results \n' + '-' * 20 + '\n')
+    print('TOTAL VOTES: '+ repr(count) + '\n' + '-' * 20 + '\n' )
+    print('Khan = ' + repr(khan_perc) + '% (' + repr(khan_votes) + ') \n')
+    print('Correy = ' + repr(correy_perc) + '% (' + repr(correy_votes) + ') \n')
+    print('Li = ' + repr(li_perc) + '% (' + repr(li_votes) + ') \n')
+    print('Otooley = ' + repr(otooley_perc) + '% (' + repr(otooley_votes) + ') \n')    
+    print('-' * 20 + '\n' + 'Khan is the winner \n')
 
 
     with open(TEXT_FILE, "w+") as file:
+        file.write('Election Results \n' + '-' * 20 + '\n')
+        file.write('TOTAL VOTES: '+ repr(count) + '\n' + '-' * 20 + '\n' )
         file.write('Khan = ' + repr(khan_perc) + '% (' + repr(khan_votes) + ') \n')
         file.write('Correy = ' + repr(correy_perc) + '% (' + repr(correy_votes) + ') \n')
         file.write('Li = ' + repr(li_perc) + '% (' + repr(li_votes) + ') \n')
-        file.write('Otooley = ' + repr(otooley_perc) + '% (' + repr(otooley_votes) + ') \n')
+        file.write('Otooley = ' + repr(otooley_perc) + '% (' + repr(otooley_votes) + ') \n')    
+        file.write('-' * 20 + '\n' + 'Khan is the winner \n')
