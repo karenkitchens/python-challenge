@@ -70,4 +70,3 @@ with open(path, "r") as file:
         file.write('Correy = ' + repr(correy_perc) + '% (' + repr(correy_votes) + ') \n')
         file.write('Li = ' + repr(li_perc) + '% (' + repr(li_votes) + ') \n')
         file.write('Otooley = ' + repr(otooley_perc) + '% (' + repr(otooley_votes) + ') \n')
-        file.write("Goodboy\n")
